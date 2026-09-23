@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Byzantium Trust | Family Office</title>
-<meta content="Byzantium Trust is a family office formed in 1990, investing in biotechnology, healthcare, technology, green energy, critical metals and blockchain networks, from pre-clinical stage through commercialization." name="description"/>
-<meta content="#03050b" name="theme-color"/>
-<meta content="Byzantium Trust | Family Office" property="og:title"/>
-<meta content="A family office since 1990. Over $2 billion of public market transactions across biotechnology, critical metals and blockchain networks." property="og:description"/>
-<meta content="https://joethn.shop/assets/earth.jpg" property="og:image"/>
-<link href="https://joethn.shop/" rel="canonical"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap" rel="stylesheet"/>
+<meta name="description" content="Byzantium Trust is a family office formed in 1990, investing in biotechnology, healthcare, technology, green energy, critical metals and blockchain networks, from pre-clinical stage through commercialization.">
+<meta name="theme-color" content="#03050b">
+<meta property="og:title" content="Byzantium Trust | Family Office">
+<meta property="og:description" content="A family office since 1990. Over $2 billion of public market transactions across biotechnology, critical metals and blockchain networks.">
+<meta property="og:image" content="https://joethn.shop/assets/earth.jpg">
+<link rel="canonical" href="https://joethn.shop/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <style>
   :root {
     --space: #03050b;
@@ -268,7 +267,7 @@
   /* ---------- Memoriam ---------- */
   .memoriam { background: radial-gradient(50% 60% at 20% 50%, rgba(110,154,202,.08), transparent 70%), var(--space); }
   .memoriam .inner { display: grid; grid-template-columns: 240px 1fr; gap: 72px; align-items: center; max-width: 940px; margin: 0 auto; }
-  .memoriam img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 999px 999px 18px 18px; outline: 1px solid rgba(110,154,202,.55); outline-offset: 10px; filter: grayscale(.35) contrast(1.05); }
+  .memoriam img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); filter: grayscale(.2); box-shadow: 0 20px 44px -24px rgba(17,26,46,.45); }
   .memoriam blockquote { position: relative; margin: 0; font-family: var(--serif); font-size: clamp(28px, 3.4vw, 40px); line-height: 1.25; color: var(--text); }
   .memoriam blockquote::before { content: "\201C"; position: absolute; left: -.05em; top: -.62em; font-size: 3.4em; line-height: 1; color: var(--accent); opacity: .35; }
   .memoriam .eyebrow { margin-bottom: 58px; }
@@ -303,6 +302,27 @@
   footer .row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 26px; padding-bottom: calc(28px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); }
   footer .row a { color: var(--text-2); text-decoration: none; }
   footer .row a:hover { color: var(--accent-hi); }
+
+  /* ---------- Light sections (white, like the original site) ---------- */
+  section.light { background: #fff; color: var(--ink); }
+  .light .eyebrow { color: var(--accent-lo); }
+  .light .eyebrow::before { background: var(--accent-lo); }
+  .light h2 em { color: var(--accent-lo); }
+  .light .about-grid p { color: var(--muted); }
+  .light .ornament { color: var(--accent); }
+  .light .card { background: var(--ivory); border-color: var(--paper-line); }
+  .light .card::before { background: radial-gradient(420px circle at var(--x, 50%) var(--y, 0%), rgba(110,154,202,.14), transparent 45%); }
+  .light .card .num { color: var(--accent-lo); }
+  .light .card .icon { background: var(--navy); border-color: var(--navy); color: var(--blue-soft); }
+  .light .card h3 { color: var(--ink); }
+  .light .card p { color: var(--muted); }
+  @media (hover: hover) { .light .card:hover { border-color: var(--blue-soft); box-shadow: 0 18px 40px -20px rgba(17,26,46,.35); } }
+  .light .swipe { color: #8a93a3; }
+  .light .swipe .bar { background: var(--paper-line); }
+  .light .swipe b { color: var(--accent-lo); }
+  .light.memoriam blockquote { color: var(--navy); }
+  .light.memoriam blockquote::before { color: var(--accent); opacity: .3; }
+  .light.memoriam cite { color: var(--muted); }
 
   /* ---------- Reveal on scroll ---------- */
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
@@ -362,7 +382,7 @@
     .logo img { max-height: 50%; transform: translateY(-6px); }
     .logo .label { opacity: 1; transform: none; }
     .memoriam .inner { grid-template-columns: 1fr; text-align: center; gap: 48px; }
-    .memoriam img { max-width: 190px; margin: 0 auto; }
+    .memoriam img { max-width: 200px; margin: 0 auto; }
     .memoriam blockquote::before { left: 50%; transform: translateX(-50%); top: -.72em; }
     .contact-grid { margin-top: 56px; }
     .offices { grid-template-columns: 1fr; }
@@ -373,227 +393,240 @@
 </style>
 </head>
 <body>
-<div aria-hidden="true" class="progress"></div>
+
+<div class="progress" aria-hidden="true"></div>
+
 <header class="site-header" id="top">
-<div class="wrap nav">
-<a aria-label="Byzantium Trust, home" class="brand" href="#top">
-<span class="name">Byzantium Trust</span>
-<span class="sub">Family Office</span>
-</a>
-<ul class="nav-links">
-<li><a href="#about">About</a></li>
-<li><a href="#focus">Focus</a></li>
-<li><a href="#holdings">Holdings</a></li>
-<li><a class="cta" href="#contact">Contact</a></li>
-</ul>
-<button aria-controls="menu" aria-expanded="false" aria-label="Menu" class="menu-btn"><i></i><i></i></button>
-</div>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Byzantium Trust, home">
+      <span class="name">Byzantium Trust</span>
+      <span class="sub">Family Office</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#focus">Focus</a></li>
+      <li><a href="#holdings">Holdings</a></li>
+      <li><a href="#contact" class="cta">Contact</a></li>
+    </ul>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+  </div>
 </header>
-<nav aria-hidden="true" aria-label="Mobile" class="menu" id="menu">
-<ol>
-<li style="--d:0"><a href="#about">About</a></li>
-<li style="--d:1"><a href="#focus">Focus</a></li>
-<li style="--d:2"><a href="#holdings">Holdings</a></li>
-<li style="--d:3"><a href="#contact">Contact</a></li>
-</ol>
-<div class="menu-foot">
+
+<nav class="menu" id="menu" aria-label="Mobile" aria-hidden="true">
+  <ol>
+    <li style="--d:0"><a href="#about">About</a></li>
+    <li style="--d:1"><a href="#focus">Focus</a></li>
+    <li style="--d:2"><a href="#holdings">Holdings</a></li>
+    <li style="--d:3"><a href="#contact">Contact</a></li>
+  </ol>
+  <div class="menu-foot">
     Toronto · Grand Cayman · London
-    <a href="/cdn-cgi/l/email-protection#22605b58434c564b574f765057515662524f0c4f47"><span class="__cf_email__" data-cfemail="195b606378776d706c744d6b6c6a6d59697437747c">[email protected]</span></a>
-</div>
+    <a href="/cdn-cgi/l/email-protection#6a2813100b041e031f073e181f191e2a1a0744070f"><span class="__cf_email__" data-cfemail="a8ead1d2c9c6dcc1ddc5fcdadddbdce8d8c586c5cd">[email&#160;protected]</span></a>
+  </div>
 </nav>
+
 <main>
-<!-- Hero -->
-<section class="hero">
-<canvas aria-hidden="true" class="stars"></canvas>
-<div aria-hidden="true" class="planet-pos">
-<div class="planet">
-<div class="atmo"></div>
-<img alt="" class="globe" decoding="async" fetchpriority="high" height="2048" src="assets/earth.jpg" width="2048"/>
-<canvas class="globe-gl"></canvas>
-<div class="rim"></div>
-<div class="orbit"><div class="arc"></div></div>
-<div class="orbit o2"><div class="arc"></div></div>
-</div>
-</div>
-<div aria-hidden="true" class="hero-shade"></div>
-<div class="wrap hero-content">
-<div>
-<p class="eyebrow fade-up" style="--d:.2s">Family Office · Est. 1990</p>
-<h1 aria-label="Byzantium Trust">
-<span aria-hidden="true" class="line"><span style="--d:.3s">Byzantium</span></span>
-<span aria-hidden="true" class="line"><span style="--d:.45s"><em class="accent-text">Trust</em></span></span>
-</h1>
-<p class="lead fade-up" style="--d:.8s">We invest in private and public ventures and acquisitions across biotechnology, healthcare, technology, green energy, critical metals, internet and blockchain networks.</p>
-<div class="actions fade-up" style="--d:.95s">
-<a class="btn btn-primary" href="#holdings">View holdings <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-<a class="btn btn-ghost" href="#contact">Get in touch</a>
-</div>
-</div>
-</div>
-<div aria-hidden="true" class="hero-meta fade-up" style="--d:1.3s">
-<div class="wrap">
-<div class="coords">
-<div><b>Toronto</b>43.65° N · 79.38° W</div>
-<div><b>Grand Cayman</b>19.29° N · 81.38° W</div>
-<div><b>London</b>51.50° N · 0.02° W</div>
-</div>
-<a class="scroll-cue" href="#about" tabindex="-1">Scroll<span></span></a>
-</div>
-</div>
-</section>
-<!-- Ticker -->
-<div aria-hidden="true" class="ticker"><div class="track"></div></div>
-<!-- Stats -->
-<section aria-label="Key figures" class="stats">
-<div class="wrap">
-<div class="stat"><b class="accent-text" data-count="36" id="years">36</b><span>Years investing</span></div>
-<div class="stat"><b class="accent-text" data-count="2" data-prefix="$" data-suffix="B+">$2B+</b><span>Public market transactions</span></div>
-<div class="stat"><b class="accent-text" data-count="60" id="holding-count">60+</b><span>Current holdings</span></div>
-<div class="stat"><b class="accent-text" data-count="3">3</b><span>Offices worldwide</span></div>
-</div>
-</section>
-<!-- About + Focus -->
-<section class="block about" id="about">
-<div class="wrap">
-<div class="about-grid reveal">
-<div>
-<p class="eyebrow">Who we are</p>
-<h2>Three decades of backing ideas <em>early.</em></h2>
-</div>
-<div>
-<p>We have concluded over $2 billion of public market transactions. We invest from the pre-revenue and pre-clinical stage through to commercialization, and we stay involved at every step.</p>
-<svg aria-hidden="true" class="ornament" viewbox="0 0 120 12"><path d="M0 6h48M72 6h48" stroke="currentColor"></path><path d="M60 0l6 6-6 6-6-6z" fill="currentColor"></path></svg>
-</div>
-</div>
-<div class="focus-head reveal" id="focus">
-<div>
-<p class="eyebrow" style="margin:0">Where we invest</p>
-</div>
-</div>
-<div class="focus stagger">
-<article class="card" style="--i:0">
-<span class="num">01</span>
-<div class="icon"><svg fill="none" height="22" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="22"><path d="M7 3c0 6 10 6 10 12s-10 6-10 6M17 3c0 6-10 6-10 12M8 7h8M8 17h8"></path></svg></div>
-<h3>Biotechnology &amp; Healthcare</h3>
-<p>Clinical-stage and commercial therapeutics, from gene therapy to rare disease and oncology.</p>
-</article>
-<article class="card" style="--i:1">
-<span class="num">02</span>
-<div class="icon"><svg fill="none" height="22" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="22"><path d="M12 2l9 5v10l-9 5-9-5V7z"></path><path d="M12 22V12M21 7l-9 5-9-5"></path></svg></div>
-<h3>Critical Metals</h3>
-<p>Antimony, uranium and strategic minerals that supply the energy transition and defense.</p>
-</article>
-<article class="card" style="--i:2">
-<span class="num">03</span>
-<div class="icon"><svg fill="none" height="22" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="22"><rect height="7" rx="1.5" width="7" x="3" y="3"></rect><rect height="7" rx="1.5" width="7" x="14" y="14"></rect><path d="M10 6.5h4a3 3 0 013 3V14M14 17.5h-4a3 3 0 01-3-3V10"></path></svg></div>
-<h3>Blockchain Networks</h3>
-<p>Layer-1 protocols, interoperability infrastructure and digital-asset platforms.</p>
-</article>
-<article class="card" style="--i:3">
-<span class="num">04</span>
-<div class="icon"><svg fill="none" height="22" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="22"><path d="M13 2L4 14h7l-1 8 9-12h-7z"></path></svg></div>
-<h3>Green Energy</h3>
-<p>Clean power and the materials and technology behind it.</p>
-</article>
-<article class="card" style="--i:4">
-<span class="num">05</span>
-<div class="icon"><svg fill="none" height="22" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="22"><rect height="16" rx="2" width="16" x="4" y="4"></rect><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"></path></svg></div>
-<h3>Technology &amp; Internet</h3>
-<p>Software, platforms and the infrastructure of the connected economy.</p>
-</article>
-<article class="card" style="--i:5">
-<span class="num">06</span>
-<div class="icon"><svg fill="none" height="22" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="22"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"></path></svg></div>
-<h3>Acquisitions</h3>
-<p>Acquiring undervalued businesses and building long-term value.</p>
-</article>
-</div>
-<div aria-hidden="true" class="swipe"><b id="swipe-n">01</b><span class="bar"><i></i></span><span>06</span></div>
-</div>
-</section>
-<!-- Holdings -->
-<section class="block holdings" id="holdings">
-<div class="wrap">
-<div class="holdings-head reveal">
-<div>
-<p class="eyebrow">Portfolio</p>
-<h2>Our <em>holdings</em></h2>
-</div>
-<div aria-label="Holding categories" class="tabs" role="tablist">
-<span aria-hidden="true" class="tab-ind"></span>
-<button aria-controls="grid-biotech" aria-selected="true" data-tab="biotech" id="tab-biotech" role="tab">Biotech<span class="count"></span></button>
-<button aria-controls="grid-metals" aria-selected="false" data-tab="metals" id="tab-metals" role="tab" tabindex="-1">Metals<span class="count"></span></button>
-<button aria-controls="grid-crypto" aria-selected="false" data-tab="crypto" id="tab-crypto" role="tab" tabindex="-1">Crypto<span class="count"></span></button>
-</div>
-</div>
-<div aria-labelledby="tab-biotech" class="logo-grid" id="grid-biotech" role="tabpanel"></div>
-<div aria-labelledby="tab-metals" class="logo-grid" hidden="" id="grid-metals" role="tabpanel"></div>
-<div aria-labelledby="tab-crypto" class="logo-grid" hidden="" id="grid-crypto" role="tabpanel"></div>
-<p class="disclaimer">These holdings are listed for information only. Nothing here is an offer, solicitation or investment advice. Trademarks belong to their respective owners.</p>
-</div>
-</section>
-<!-- Memoriam -->
-<section class="block memoriam">
-<div class="wrap">
-<div class="inner reveal">
-<img alt="Portrait of Ronald, Trustee" loading="lazy" src="assets/memorandum-robert.jpg"/>
-<div>
-<p class="eyebrow">In Memoriam · 1935–2020</p>
-<blockquote>To our dear friend and Trustee Ronald. Thank you for 25 years of dedication and care. We miss you.</blockquote>
-</div>
-</div>
-</div>
-</section>
-<!-- Contact -->
-<section class="block contact" id="contact">
-<div class="wrap">
-<div class="reveal">
-<p class="eyebrow">Contact</p>
-<h2>Let's <em>talk.</em></h2>
-<p class="lede">For investment opportunities, partnerships or general inquiries, contact our team directly.</p>
-</div>
-<div class="contact-grid">
-<div class="emails reveal">
-<div class="group">
-<p class="group-label">General inquiries</p>
-<a class="mail" href="/cdn-cgi/l/email-protection#c381bab9a2adb7aab6ae97b1b6b0b783b3aeedaea6"><span class="__cf_email__" data-cfemail="d496adaeb5baa0bda1b980a6a1a7a094a4b9fab9b1">[email protected]</span><span class="arr"><svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
-<a class="mail" href="/cdn-cgi/l/email-protection#b6f7dadacff6f4cfccd7d8c2dfc3dbe2c4c3c5c298d5d9db"><span class="__cf_email__" data-cfemail="7a3b1616033a3803001b140e130f172e080f090e54191517">[email protected]</span><span class="arr"><svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
-</div>
-<div class="group">
-<p class="group-label">Direct</p>
-<a class="mail" href="/cdn-cgi/l/email-protection#4e0f222c2b3c3a0e0c37342f203a273b231a3c3b3d3a602d2123"><span class="__cf_email__" data-cfemail="7938151b1c0b0d393b000318170d100c142d0b0c0a0d571a1614">[email protected]</span><span class="arr"><svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
-<a class="mail" href="/cdn-cgi/l/email-protection#89c3e6ecc9cbf0f3e8e7fde0fce4ddfbfcfafda7eae6e4"><span class="__cf_email__" data-cfemail="602a0f052022191a010e1409150d34121513144e030f0d">[email protected]</span><span class="arr"><svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
-</div>
-</div>
-<div class="offices stagger">
-<div class="office" style="--i:0">
-<h3>Toronto</h3>
-<span class="clock" data-tz="America/Toronto">--:--</span>
-<address>66 Wellington St. West<br/>Toronto, ON M5K 1E6<br/>Canada</address>
-</div>
-<div class="office" style="--i:1">
-<h3>Cayman Islands</h3>
-<span class="clock" data-tz="America/Cayman">--:--</span>
-<address>Byzantium Trust Family Office<br/>Ugland House<br/>121 South Church Street<br/>PO Box 309, George Town<br/>Grand Cayman KY1-1104</address>
-</div>
-<div class="office" style="--i:2">
-<h3>London</h3>
-<span class="clock" data-tz="Europe/London">--:--</span>
-<address>10 Upper Bank St.<br/>Canary Wharf<br/>London E14 5JJ<br/>United Kingdom</address>
-</div>
-</div>
-</div>
-</div>
-</section>
+  <!-- Hero -->
+  <section class="hero">
+    <canvas class="stars" aria-hidden="true"></canvas>
+    <div class="planet-pos" aria-hidden="true">
+      <div class="planet">
+        <div class="atmo"></div>
+        <img class="globe" src="assets/earth.jpg" alt="" width="2048" height="2048" fetchpriority="high" decoding="async">
+        <canvas class="globe-gl"></canvas>
+        <div class="rim"></div>
+        <div class="orbit"><div class="arc"></div></div>
+        <div class="orbit o2"><div class="arc"></div></div>
+      </div>
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="wrap hero-content">
+      <div>
+        <p class="eyebrow fade-up" style="--d:.2s">Family Office · Est. 1990</p>
+        <h1 aria-label="Byzantium Trust">
+          <span class="line" aria-hidden="true"><span style="--d:.3s">Byzantium</span></span>
+          <span class="line" aria-hidden="true"><span style="--d:.45s"><em class="accent-text">Trust</em></span></span>
+        </h1>
+        <p class="lead fade-up" style="--d:.8s">We invest in private and public ventures and acquisitions across biotechnology, healthcare, technology, green energy, critical metals, internet and blockchain networks.</p>
+        <div class="actions fade-up" style="--d:.95s">
+          <a class="btn btn-primary" href="#holdings">View holdings <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-meta fade-up" style="--d:1.3s" aria-hidden="true">
+      <div class="wrap">
+        <div class="coords">
+          <div><b>Toronto</b>43.65° N · 79.38° W</div>
+          <div><b>Grand Cayman</b>19.29° N · 81.38° W</div>
+          <div><b>London</b>51.50° N · 0.02° W</div>
+        </div>
+        <a class="scroll-cue" href="#about" tabindex="-1">Scroll<span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticker -->
+  <div class="ticker" aria-hidden="true"><div class="track"></div></div>
+
+  <!-- Stats -->
+  <section class="stats" aria-label="Key figures">
+    <div class="wrap">
+      <div class="stat"><b class="accent-text" id="years" data-count="36">36</b><span>Years investing</span></div>
+      <div class="stat"><b class="accent-text" data-count="2" data-prefix="$" data-suffix="B+">$2B+</b><span>Public market transactions</span></div>
+      <div class="stat"><b class="accent-text" id="holding-count" data-count="60">60+</b><span>Current holdings</span></div>
+      <div class="stat"><b class="accent-text" data-count="3">3</b><span>Offices worldwide</span></div>
+    </div>
+  </section>
+
+  <!-- About + Focus -->
+  <section class="block about light" id="about">
+    <div class="wrap">
+      <div class="about-grid reveal">
+        <div>
+          <p class="eyebrow">Who we are</p>
+          <h2>Three decades of backing ideas <em>early.</em></h2>
+        </div>
+        <div>
+          <p>We have concluded over $2 billion of public market transactions. We invest from the pre-revenue and pre-clinical stage through to commercialization, and we stay involved at every step.</p>
+          <svg class="ornament" viewBox="0 0 120 12" aria-hidden="true"><path d="M0 6h48M72 6h48" stroke="currentColor"/><path d="M60 0l6 6-6 6-6-6z" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="focus-head reveal" id="focus">
+        <div>
+          <p class="eyebrow" style="margin:0">Where we invest</p>
+        </div>
+      </div>
+      <div class="focus stagger">
+        <article class="card" style="--i:0">
+          <span class="num">01</span>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3c0 6 10 6 10 12s-10 6-10 6M17 3c0 6-10 6-10 12M8 7h8M8 17h8"/></svg></div>
+          <h3>Biotechnology &amp; Healthcare</h3>
+          <p>Clinical-stage and commercial therapeutics, from gene therapy to rare disease and oncology.</p>
+        </article>
+        <article class="card" style="--i:1">
+          <span class="num">02</span>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg></div>
+          <h3>Critical Metals</h3>
+          <p>Antimony, uranium and strategic minerals that supply the energy transition and defense.</p>
+        </article>
+        <article class="card" style="--i:2">
+          <span class="num">03</span>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a3 3 0 013 3V14M14 17.5h-4a3 3 0 01-3-3V10"/></svg></div>
+          <h3>Blockchain Networks</h3>
+          <p>Layer-1 protocols, interoperability infrastructure and digital-asset platforms.</p>
+        </article>
+        <article class="card" style="--i:3">
+          <span class="num">04</span>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <h3>Green Energy</h3>
+          <p>Clean power and the materials and technology behind it.</p>
+        </article>
+        <article class="card" style="--i:4">
+          <span class="num">05</span>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div>
+          <h3>Technology &amp; Internet</h3>
+          <p>Software, platforms and the infrastructure of the connected economy.</p>
+        </article>
+        <article class="card" style="--i:5">
+          <span class="num">06</span>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></div>
+          <h3>Acquisitions</h3>
+          <p>Acquiring undervalued businesses and building long-term value.</p>
+        </article>
+      </div>
+      <div class="swipe" aria-hidden="true"><b id="swipe-n">01</b><span class="bar"><i></i></span><span>06</span></div>
+    </div>
+  </section>
+
+  <!-- Holdings -->
+  <section class="block holdings" id="holdings">
+    <div class="wrap">
+      <div class="holdings-head reveal">
+        <div>
+          <p class="eyebrow">Portfolio</p>
+          <h2>Our <em>holdings</em></h2>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Holding categories">
+          <span class="tab-ind" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" aria-controls="grid-biotech" id="tab-biotech" data-tab="biotech">Biotech<span class="count"></span></button>
+          <button role="tab" aria-selected="false" aria-controls="grid-metals" id="tab-metals" data-tab="metals" tabindex="-1">Metals<span class="count"></span></button>
+          <button role="tab" aria-selected="false" aria-controls="grid-crypto" id="tab-crypto" data-tab="crypto" tabindex="-1">Crypto<span class="count"></span></button>
+        </div>
+      </div>
+      <div class="logo-grid" id="grid-biotech" role="tabpanel" aria-labelledby="tab-biotech"></div>
+      <div class="logo-grid" id="grid-metals" role="tabpanel" aria-labelledby="tab-metals" hidden></div>
+      <div class="logo-grid" id="grid-crypto" role="tabpanel" aria-labelledby="tab-crypto" hidden></div>
+      <p class="disclaimer">These holdings are listed for information only. Nothing here is an offer, solicitation or investment advice. Trademarks belong to their respective owners.</p>
+    </div>
+  </section>
+
+  <!-- Memoriam -->
+  <section class="block memoriam light">
+    <div class="wrap">
+      <div class="inner reveal">
+        <img src="assets/memorandum-robert.jpg" alt="Portrait of Ronald, Trustee" loading="lazy">
+        <div>
+          <p class="eyebrow">In Memoriam · 1935–2020</p>
+          <blockquote>To our dear friend and Trustee Ronald. Thank you for 25 years of dedication and care. We miss you.</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's <em>talk.</em></h2>
+        <p class="lede">For investment opportunities, partnerships or general inquiries, contact our team directly.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="emails reveal">
+          <div class="group">
+            <p class="group-label">General inquiries</p>
+            <a class="mail" href="/cdn-cgi/l/email-protection#dd9fa4a7bcb3a9b4a8b089afa8aea99dadb0f3b0b8"><span class="__cf_email__" data-cfemail="c486bdbea5aab0adb1a990b6b1b7b084b4a9eaa9a1">[email&#160;protected]</span><span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+            <a class="mail" href="/cdn-cgi/l/email-protection#6e2f0202172e2c17140f001a071b033a1c1b1d1a400d0103"><span class="__cf_email__" data-cfemail="bafbd6d6c3faf8c3c0dbd4ced3cfd7eec8cfc9ce94d9d5d7">[email&#160;protected]</span><span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          </div>
+          <div class="group">
+            <p class="group-label">Direct</p>
+            <a class="mail" href="/cdn-cgi/l/email-protection#85c4e9e7e0f7f1c5c7fcffe4ebf1ecf0e8d1f7f0f6f1abe6eae8"><span class="__cf_email__" data-cfemail="cf8ea3adaabdbb8f8db6b5aea1bba6baa29bbdbabcbbe1aca0a2">[email&#160;protected]</span><span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+            <a class="mail" href="/cdn-cgi/l/email-protection#a8e2c7cde8ead1d2c9c6dcc1ddc5fcdadddbdc86cbc7c5"><span class="__cf_email__" data-cfemail="4f05202a0f0d36352e213b263a221b3d3a3c3b612c2022">[email&#160;protected]</span><span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          </div>
+        </div>
+        <div class="offices stagger">
+          <div class="office" style="--i:0">
+            <h3>Toronto</h3>
+            <span class="clock" data-tz="America/Toronto">--:--</span>
+            <address>66 Wellington St. West<br>Toronto, ON M5K 1E6<br>Canada</address>
+          </div>
+          <div class="office" style="--i:1">
+            <h3>Cayman Islands</h3>
+            <span class="clock" data-tz="America/Cayman">--:--</span>
+            <address>Byzantium Trust Family Office<br>Ugland House<br>121 South Church Street<br>PO Box 309, George Town<br>Grand Cayman KY1-1104</address>
+          </div>
+          <div class="office" style="--i:2">
+            <h3>London</h3>
+            <span class="clock" data-tz="Europe/London">--:--</span>
+            <address>10 Upper Bank St.<br>Canary Wharf<br>London E14 5JJ<br>United Kingdom</address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
+
 <footer>
-<p aria-hidden="true" class="footer-mark">Byzantium Trust</p>
-<div class="wrap row">
-<span>© <span id="year">2026</span> Byzantium Trust. All rights reserved.</span>
-<a href="#top">Back to top ↑</a>
-</div>
+  <p class="footer-mark" aria-hidden="true">Byzantium Trust</p>
+  <div class="wrap row">
+    <span>© <span id="year">2026</span> Byzantium Trust. All rights reserved.</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const U = "assets/logos/";
   const HOLDINGS = {
     biotech: [
@@ -859,6 +892,6 @@
 
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-<script src="assets/globe.js?v=7" type="module"></script>
+<script type="module" src="assets/globe.js?v=7"></script>
 </body>
 </html>
