@@ -208,7 +208,8 @@
   .lede { font-size: 18px; color: var(--text-2); max-width: 560px; margin: 0; }
   .about { background: radial-gradient(55% 45% at 90% 0%, rgba(110,154,202,.12), transparent 70%), var(--space); }
   .about-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 72px; align-items: end; }
-  .about-grid p { color: var(--text-2); font-size: 18px; margin: 0 0 24px; }
+  .about-grid p { color: rgba(255,255,255,.92); font-size: 18px; margin: 0 0 24px; }
+  .about h2, .about .card h3 { color: #fff; }
 
   .focus-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-top: 130px; }
   .focus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 52px; }
@@ -227,7 +228,7 @@
   .card .num { position: absolute; top: 30px; right: 30px; font-family: var(--serif); font-size: 17px; color: var(--accent); letter-spacing: .06em; }
   .card .icon { width: 50px; height: 50px; border-radius: 14px; display: grid; place-items: center; color: var(--accent-hi); border: 1px solid rgba(110,154,202,.32); background: rgba(110,154,202,.06); }
   .card h3 { font-family: var(--serif); font-weight: 500; font-size: 28px; line-height: 1.1; margin: auto 0 10px; padding-top: 40px; }
-  .card p { margin: 0; color: var(--text-2); font-size: 15px; }
+  .card p { margin: 0; color: rgba(255,255,255,.84); font-size: 15px; }
   .swipe { display: none; }
 
   /* ---------- Holdings ---------- */
@@ -267,10 +268,8 @@
   /* ---------- Memoriam ---------- */
   .memoriam { background: radial-gradient(50% 60% at 20% 50%, rgba(110,154,202,.08), transparent 70%), var(--space); }
   .memoriam .inner { display: grid; grid-template-columns: 240px 1fr; gap: 72px; align-items: center; max-width: 940px; margin: 0 auto; }
-  .memoriam img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); filter: grayscale(.2); box-shadow: 0 20px 44px -24px rgba(17,26,46,.45); }
-  .memoriam blockquote { position: relative; margin: 0; font-family: var(--serif); font-size: clamp(28px, 3.4vw, 40px); line-height: 1.25; color: var(--text); }
-  .memoriam blockquote::before { content: "\201C"; position: absolute; left: -.05em; top: -.62em; font-size: 3.4em; line-height: 1; color: var(--accent); opacity: .35; }
-  .memoriam .eyebrow { margin-bottom: 58px; }
+  .memoriam img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 22%; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 0 10px rgba(255,255,255,.07), 0 24px 50px -20px rgba(0,0,0,.7); filter: grayscale(.2); }
+  .memoriam blockquote { position: relative; margin: 0; font-family: var(--serif); font-size: clamp(28px, 3.4vw, 40px); line-height: 1.25; color: #fff; }
   .memoriam cite { display: block; margin-top: 22px; font-style: normal; color: var(--text-3); font-size: 14px; letter-spacing: .12em; text-transform: uppercase; }
 
   /* ---------- Contact ---------- */
@@ -302,27 +301,6 @@
   footer .row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 26px; padding-bottom: calc(28px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); }
   footer .row a { color: var(--text-2); text-decoration: none; }
   footer .row a:hover { color: var(--accent-hi); }
-
-  /* ---------- Light sections (white, like the original site) ---------- */
-  section.light { background: #fff; color: var(--ink); }
-  .light .eyebrow { color: var(--accent-lo); }
-  .light .eyebrow::before { background: var(--accent-lo); }
-  .light h2 em { color: var(--accent-lo); }
-  .light .about-grid p { color: var(--muted); }
-  .light .ornament { color: var(--accent); }
-  .light .card { background: var(--ivory); border-color: var(--paper-line); }
-  .light .card::before { background: radial-gradient(420px circle at var(--x, 50%) var(--y, 0%), rgba(110,154,202,.14), transparent 45%); }
-  .light .card .num { color: var(--accent-lo); }
-  .light .card .icon { background: var(--navy); border-color: var(--navy); color: var(--blue-soft); }
-  .light .card h3 { color: var(--ink); }
-  .light .card p { color: var(--muted); }
-  @media (hover: hover) { .light .card:hover { border-color: var(--blue-soft); box-shadow: 0 18px 40px -20px rgba(17,26,46,.35); } }
-  .light .swipe { color: #8a93a3; }
-  .light .swipe .bar { background: var(--paper-line); }
-  .light .swipe b { color: var(--accent-lo); }
-  .light.memoriam blockquote { color: var(--navy); }
-  .light.memoriam blockquote::before { color: var(--accent); opacity: .3; }
-  .light.memoriam cite { color: var(--muted); }
 
   /* ---------- Reveal on scroll ---------- */
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
@@ -382,8 +360,7 @@
     .logo img { max-height: 50%; transform: translateY(-6px); }
     .logo .label { opacity: 1; transform: none; }
     .memoriam .inner { grid-template-columns: 1fr; text-align: center; gap: 48px; }
-    .memoriam img { max-width: 200px; margin: 0 auto; }
-    .memoriam blockquote::before { left: 50%; transform: translateX(-50%); top: -.72em; }
+    .memoriam img { max-width: 190px; margin: 0 auto; }
     .contact-grid { margin-top: 56px; }
     .offices { grid-template-columns: 1fr; }
     .office { display: grid; grid-template-columns: 1fr auto; align-items: start; column-gap: 12px; }
@@ -421,7 +398,7 @@
   </ol>
   <div class="menu-foot">
     Toronto · Grand Cayman · London
-    <a href="/cdn-cgi/l/email-protection#6a2813100b041e031f073e181f191e2a1a0744070f"><span class="__cf_email__" data-cfemail="a8ead1d2c9c6dcc1ddc5fcdadddbdce8d8c586c5cd">[email&#160;protected]</span></a>
+    <a href="mailto:ByzantiumTrust@pm.me">ByzantiumTrust@pm.me</a>
   </div>
 </nav>
 
@@ -480,7 +457,7 @@
   </section>
 
   <!-- About + Focus -->
-  <section class="block about light" id="about">
+  <section class="block about" id="about">
     <div class="wrap">
       <div class="about-grid reveal">
         <div>
@@ -563,7 +540,7 @@
   </section>
 
   <!-- Memoriam -->
-  <section class="block memoriam light">
+  <section class="block memoriam">
     <div class="wrap">
       <div class="inner reveal">
         <img src="assets/memorandum-robert.jpg" alt="Portrait of Ronald, Trustee" loading="lazy">
@@ -587,13 +564,13 @@
         <div class="emails reveal">
           <div class="group">
             <p class="group-label">General inquiries</p>
-            <a class="mail" href="/cdn-cgi/l/email-protection#dd9fa4a7bcb3a9b4a8b089afa8aea99dadb0f3b0b8"><span class="__cf_email__" data-cfemail="c486bdbea5aab0adb1a990b6b1b7b084b4a9eaa9a1">[email&#160;protected]</span><span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-            <a class="mail" href="/cdn-cgi/l/email-protection#6e2f0202172e2c17140f001a071b033a1c1b1d1a400d0103"><span class="__cf_email__" data-cfemail="bafbd6d6c3faf8c3c0dbd4ced3cfd7eec8cfc9ce94d9d5d7">[email&#160;protected]</span><span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+            <a class="mail" href="mailto:ByzantiumTrust@pm.me">ByzantiumTrust@pm.me<span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+            <a class="mail" href="mailto:Ally@ByzantiumTrust.com">Ally@ByzantiumTrust.com<span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
           </div>
           <div class="group">
             <p class="group-label">Direct</p>
-            <a class="mail" href="/cdn-cgi/l/email-protection#85c4e9e7e0f7f1c5c7fcffe4ebf1ecf0e8d1f7f0f6f1abe6eae8"><span class="__cf_email__" data-cfemail="cf8ea3adaabdbb8f8db6b5aea1bba6baa29bbdbabcbbe1aca0a2">[email&#160;protected]</span><span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-            <a class="mail" href="/cdn-cgi/l/email-protection#a8e2c7cde8ead1d2c9c6dcc1ddc5fcdadddbdc86cbc7c5"><span class="__cf_email__" data-cfemail="4f05202a0f0d36352e213b263a221b3d3a3c3b612c2022">[email&#160;protected]</span><span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+            <a class="mail" href="mailto:Albert@ByzantiumTrust.com">Albert@ByzantiumTrust.com<span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+            <a class="mail" href="mailto:Joe@ByzantiumTrust.com">Joe@ByzantiumTrust.com<span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
           </div>
         </div>
         <div class="offices stagger">
@@ -626,7 +603,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   const U = "assets/logos/";
   const HOLDINGS = {
     biotech: [
