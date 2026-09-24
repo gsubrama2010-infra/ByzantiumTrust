@@ -1,4 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#03050b"/>
-  <text x="32" y="43" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="600" fill="#a9c4e3" text-anchor="middle">BT</text>
+  <defs>
+    <radialGradient id="planet" cx="36%" cy="30%" r="78%">
+      <stop offset="0" stop-color="#e3eefb"/>
+      <stop offset=".3" stop-color="#8fb4dd"/>
+      <stop offset=".68" stop-color="#3a64a0"/>
+      <stop offset="1" stop-color="#14294f"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0c1427"/>
+  <!-- orbit, back half (passes behind the planet) -->
+  <path d="M5 32 A27 8.5 0 0 1 59 32" transform="rotate(-22 32 32)" fill="none" stroke="#a9c4e3" stroke-width="3" stroke-opacity=".45"/>
+  <circle cx="32" cy="32" r="18" fill="url(#planet)"/>
+  <!-- orbit, front half, with a satellite -->
+  <g transform="rotate(-22 32 32)">
+    <path d="M59 32 A27 8.5 0 0 1 5 32" fill="none" stroke="#a9c4e3" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="18.5" cy="39.4" r="4" fill="#fff"/>
+  </g>
 </svg>
